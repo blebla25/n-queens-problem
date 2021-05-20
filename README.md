@@ -1,1 +1,2 @@
-# n-quenns-problem
+# N quenns problem
+
