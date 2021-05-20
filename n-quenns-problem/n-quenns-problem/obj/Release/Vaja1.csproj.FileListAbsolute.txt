@@ -1,0 +1,15 @@
+C:\Delo\2Letnik\AI\Vaja1\Vaja1\bin\Release\Vaja1.exe.config
+C:\Delo\2Letnik\AI\Vaja1\Vaja1\bin\Release\Vaja1.exe
+C:\Delo\2Letnik\AI\Vaja1\Vaja1\bin\Release\Vaja1.pdb
+C:\Delo\2Letnik\AI\Vaja1\Vaja1\obj\Release\Vaja1.csprojAssemblyReference.cache
+C:\Delo\2Letnik\AI\Vaja1\Vaja1\obj\Release\MainWindow.g.cs
+C:\Delo\2Letnik\AI\Vaja1\Vaja1\obj\Release\App.g.cs
+C:\Delo\2Letnik\AI\Vaja1\Vaja1\obj\Release\Vaja1_MarkupCompile.cache
+C:\Delo\2Letnik\AI\Vaja1\Vaja1\obj\Release\Vaja1_MarkupCompile.lref
+C:\Delo\2Letnik\AI\Vaja1\Vaja1\obj\Release\MainWindow.baml
+C:\Delo\2Letnik\AI\Vaja1\Vaja1\obj\Release\Vaja1.g.resources
+C:\Delo\2Letnik\AI\Vaja1\Vaja1\obj\Release\Vaja1.Properties.Resources.resources
+C:\Delo\2Letnik\AI\Vaja1\Vaja1\obj\Release\Vaja1.csproj.GenerateResource.cache
+C:\Delo\2Letnik\AI\Vaja1\Vaja1\obj\Release\Vaja1.csproj.CoreCompileInputs.cache
+C:\Delo\2Letnik\AI\Vaja1\Vaja1\obj\Release\Vaja1.exe
+C:\Delo\2Letnik\AI\Vaja1\Vaja1\obj\Release\Vaja1.pdb

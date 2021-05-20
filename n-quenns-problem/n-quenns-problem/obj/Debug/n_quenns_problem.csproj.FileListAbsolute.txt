@@ -1,0 +1,15 @@
+C:\Users\mihec\Documents\Github\n-quenns-problem\n-quenns-problem\n-quenns-problem\bin\Debug\Vaja1.exe.config
+C:\Users\mihec\Documents\Github\n-quenns-problem\n-quenns-problem\n-quenns-problem\bin\Debug\Vaja1.exe
+C:\Users\mihec\Documents\Github\n-quenns-problem\n-quenns-problem\n-quenns-problem\bin\Debug\Vaja1.pdb
+C:\Users\mihec\Documents\Github\n-quenns-problem\n-quenns-problem\n-quenns-problem\obj\Debug\n_quenns_problem.csprojAssemblyReference.cache
+C:\Users\mihec\Documents\Github\n-quenns-problem\n-quenns-problem\n-quenns-problem\obj\Debug\MainWindow.g.cs
+C:\Users\mihec\Documents\Github\n-quenns-problem\n-quenns-problem\n-quenns-problem\obj\Debug\App.g.cs
+C:\Users\mihec\Documents\Github\n-quenns-problem\n-quenns-problem\n-quenns-problem\obj\Debug\Vaja1_MarkupCompile.cache
+C:\Users\mihec\Documents\Github\n-quenns-problem\n-quenns-problem\n-quenns-problem\obj\Debug\Vaja1_MarkupCompile.lref
+C:\Users\mihec\Documents\Github\n-quenns-problem\n-quenns-problem\n-quenns-problem\obj\Debug\MainWindow.baml
+C:\Users\mihec\Documents\Github\n-quenns-problem\n-quenns-problem\n-quenns-problem\obj\Debug\Vaja1.g.resources
+C:\Users\mihec\Documents\Github\n-quenns-problem\n-quenns-problem\n-quenns-problem\obj\Debug\Vaja1.Properties.Resources.resources
+C:\Users\mihec\Documents\Github\n-quenns-problem\n-quenns-problem\n-quenns-problem\obj\Debug\n_quenns_problem.csproj.GenerateResource.cache
+C:\Users\mihec\Documents\Github\n-quenns-problem\n-quenns-problem\n-quenns-problem\obj\Debug\n_quenns_problem.csproj.CoreCompileInputs.cache
+C:\Users\mihec\Documents\Github\n-quenns-problem\n-quenns-problem\n-quenns-problem\obj\Debug\Vaja1.exe
+C:\Users\mihec\Documents\Github\n-quenns-problem\n-quenns-problem\n-quenns-problem\obj\Debug\Vaja1.pdb
