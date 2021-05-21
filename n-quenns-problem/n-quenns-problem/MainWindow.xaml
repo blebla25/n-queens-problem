@@ -27,10 +27,10 @@
         <Grid Name="Test" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center">
 
         </Grid>
-        <Label Content="Velikost: " Grid.Column="1" Grid.Row="0"/>
-        <Label Content="Algoritem: " Grid.Column="1" Grid.Row="1"/>
-        <Label Content="Heuristika: " Grid.Column="1" Grid.Row="2"/>
-        <ComboBox Name="Velikost" Grid.Column="2" Grid.Row="0" Margin="5,5,5,5">
+        <Label Content="Size: " Grid.Column="1" Grid.Row="0"/>
+        <Label Content="Algorithm: " Grid.Column="1" Grid.Row="1"/>
+        <Label Content="Heuristic: " Grid.Column="1" Grid.Row="2"/>
+        <ComboBox Name="Size" Grid.Column="2" Grid.Row="0" Margin="5,5,5,5">
             <ComboBoxItem Name="N4" IsSelected="True">4x4</ComboBoxItem>
             <ComboBoxItem Name="N5">5x5</ComboBoxItem>
             <ComboBoxItem Name="N6">6x6</ComboBoxItem>
@@ -42,63 +42,63 @@
             <ComboBoxItem Name="N12">12x12</ComboBoxItem>
         </ComboBox>
 
-        <ComboBox Name="Način" Grid.Column="2" Grid.Row="1" Margin="5,5,5,5">
-            <ComboBoxItem Name="item1" IsSelected="True">Vzpenjanje na hrib</ComboBoxItem>
-            <ComboBoxItem Name="item2">Simulirano ohlajanje</ComboBoxItem>
-            <ComboBoxItem Name="item3">Iskanje z lokalnim žarkom</ComboBoxItem>
-            <ComboBoxItem Name="item4">Genetski algoritem</ComboBoxItem>
+        <ComboBox Name="SearchAlgorithm" Grid.Column="2" Grid.Row="1" Margin="5,5,5,5">
+            <ComboBoxItem Name="item1" IsSelected="True">Hill Climbing</ComboBoxItem>
+            <ComboBoxItem Name="item2">Simulated annealing</ComboBoxItem>
+            <ComboBoxItem Name="item3">Local beam search</ComboBoxItem>
+            <ComboBoxItem Name="item4">Genetic algorithm</ComboBoxItem>
         </ComboBox>
-        <Button Content="Potrdi" Grid.Column="3" Grid.Row="1" Click="Spremeni" Margin="5,5,5,5"/>
-        <Button Content="Zgeneriraj kraljice" Grid.Row="2" Grid.Column="3" Margin="5,5,5,5" Click="Zgeneriraj"/>
+        <Button Content="Accept" Grid.Column="3" Grid.Row="1" Click="Change" Margin="5,5,5,5"/>
+        <Button Content="Generate quenns" Grid.Row="2" Grid.Column="3" Margin="5,5,5,5" Click="Generate"/>
         <Label Name="Heuristic" Content="0" Grid.Row="2" Grid.Column="2" Margin="5,5,5,5"/>
-        <Label Content="Število korakov: " Grid.Row="3" Grid.Column="1" Margin="5,5,5,5"/>
-        <Label Content="" Grid.Row="3" Grid.Column="2"  Margin="5,5,5,5" Name="StKorakov"/>
+        <Label Content="Num of iterations: " Grid.Row="3" Grid.Column="1" Margin="5,5,5,5"/>
+        <Label Content="" Grid.Row="3" Grid.Column="2"  Margin="5,5,5,5" Name="NumOfIterations"/>
 
-        <StackPanel  Name="StPomikov"  Grid.Row="4" Grid.Column="1" Margin="5,5,5,5"  Grid.ColumnSpan="2">
-            <Label Content="Št. pomikov v enakovredna stanja: "/>
+        <StackPanel  Name="NumOfMoves"  Grid.Row="4" Grid.Column="1" Margin="5,5,5,5"  Grid.ColumnSpan="2">
+            <Label Content="Number of moves in same position: "/>
         </StackPanel>
         <StackPanel  Name="Temp"  Grid.Row="4" Grid.Column="1" Margin="5,5,5,5"  Grid.ColumnSpan="2" Visibility="Hidden">
    
-            <Label Content="Začetna temperatura: "/>
-            <Label Content="Sprememba temperature: "/>
+            <Label Content="Start temperature: "/>
+            <Label Content="Temperature change: "/>
 
         </StackPanel>
-        <StackPanel  Name="Stanja"  Grid.Row="4" Grid.Column="1" Margin="5,5,5,5"  Grid.ColumnSpan="2" Visibility="Hidden">
+        <StackPanel  Name="Models"  Grid.Row="4" Grid.Column="1" Margin="5,5,5,5"  Grid.ColumnSpan="2" Visibility="Hidden">
 
-            <Label Content="Število stanj: "/>
-            <Label Content="Max število iteracij: "/>
-
-        </StackPanel>
-        <StackPanel  Name="Populacija"  Grid.Row="4" Grid.Column="1" Margin="5,5,5,5"  Grid.ColumnSpan="2" Visibility="Hidden">
-
-            <Label Content="velikost populacije: "/>
-            <Label Content="odstotek elitizma: "/>
-            <Label Content="verjetnost križanja: "/>
-            <Label Content="verjetnost mutacije: "/>
-            <Label Content="število generacij: "/>
+            <Label Content="Num of models: "/>
+            <Label Content="Max number of iterations: "/>
 
         </StackPanel>
-        <StackPanel  Name="Pomiki"  Margin="5,5,5,5" Grid.Row="4" Grid.Column="3">
-            <TextBox Text="" Name="pomikiEnakovrednaStanja"/>
+        <StackPanel  Name="Population"  Grid.Row="4" Grid.Column="1" Margin="5,5,5,5"  Grid.ColumnSpan="2" Visibility="Hidden">
+
+            <Label Content="Population size: "/>
+            <Label Content="Elite percent: "/>
+            <Label Content="Crossing probability: "/>
+            <Label Content="Mutation probability: "/>
+            <Label Content="Num of generations: "/>
+
+        </StackPanel>
+        <StackPanel  Name="Moves"  Margin="5,5,5,5" Grid.Row="4" Grid.Column="3">
+            <TextBox Text="" Name="movesSameDirection"/>
         </StackPanel>
         
         <StackPanel  Name="TempText"  Margin="5,5,5,5" Visibility="Hidden"  Grid.Row="4" Grid.Column="3">
-            <TextBox Text="" Name="zacetnaTemp"  Margin="5,5,5,5"/>
-            <TextBox Text="" Name="spremembaTemp"  Margin="5,5,5,5"/>
+            <TextBox Text="" Name="startTemp"  Margin="5,5,5,5"/>
+            <TextBox Text="" Name="changeTemp"  Margin="5,5,5,5"/>
             </StackPanel>
-        <StackPanel  Name="StanjaText"  Margin="5,5,5,5" Visibility="Hidden" Grid.Row="4" Grid.Column="3">
-            <TextBox Text="" Name="stStanj"  Margin="5,5,5,5"/>
-            <TextBox Text="" Name="stIteracij"  Margin="5,5,5,5"/>
+        <StackPanel  Name="ModelsText"  Margin="5,5,5,5" Visibility="Hidden" Grid.Row="4" Grid.Column="3">
+            <TextBox Text="" Name="numOfModels"  Margin="5,5,5,5"/>
+            <TextBox Text="" Name="maxNumOfIterations"  Margin="5,5,5,5"/>
             </StackPanel>
-        <StackPanel  Name="PopulacijaText"  Margin="5,5,5,5" Visibility="Hidden" Grid.Row="4" Grid.Column="3">
-            <TextBox Text="" Name="velikostPop"  Margin="5,5,5,5"/>
-            <TextBox Text="" Name="odstotekElite"  Margin="5,5,5,5"/>
-            <TextBox Text="" Name="verjetnostKrizanja"  Margin="5,5,5,5"/>
-            <TextBox Text="" Name="verjetnostMutacije"  Margin="5,5,5,5"/>
-            <TextBox Text="" Name="stGeneracij"  Margin="5,5,5,5"/>
+        <StackPanel  Name="PopulationText"  Margin="5,5,5,5" Visibility="Hidden" Grid.Row="4" Grid.Column="3">
+            <TextBox Text="" Name="sizePop"  Margin="5,5,5,5"/>
+            <TextBox Text="" Name="elitePercent"  Margin="5,5,5,5"/>
+            <TextBox Text="" Name="crossProba"  Margin="5,5,5,5"/>
+            <TextBox Text="" Name="mutaProba"  Margin="5,5,5,5"/>
+            <TextBox Text="" Name="numOfGenerations"  Margin="5,5,5,5"/>
             </StackPanel>
 
-        <Button Content="Zaženi algoritem"  Grid.Row="5" Grid.Column="3" Margin="5,5,5,5" Click="StartAlgorithm"/>
+        <Button Content="Start algorithm"  Grid.Row="5" Grid.Column="3" Margin="5,5,5,5" Click="StartAlgorithm"/>
         
         
     </Grid>

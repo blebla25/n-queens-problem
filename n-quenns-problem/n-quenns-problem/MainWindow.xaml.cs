@@ -25,7 +25,7 @@ namespace Lokalno_Iskalni_Algoritmi
         public MainWindow()
         {
             InitializeComponent();
-            int size = Velikost.SelectedIndex + 4;
+            int size = Size.SelectedIndex + 4;
             InitializeArray(size);
             DrawChessboard(size);
         }
@@ -133,14 +133,14 @@ namespace Lokalno_Iskalni_Algoritmi
 
 
         }
-        private void Spremeni(object sender, RoutedEventArgs e)
+        private void Change(object sender, RoutedEventArgs e)
         {
-            int size = Velikost.SelectedIndex + 4;
+            int size = Size.SelectedIndex + 4;
             InitializeArray(size);
             ClearBoard();
             DrawChessboard(size);
             Heuristic.Content = 0;
-            StKorakov.Content = "";
+            NumOfIterations.Content = "";
             NarisiParametre();
         }
         private void ClearBoard()
@@ -155,17 +155,17 @@ namespace Lokalno_Iskalni_Algoritmi
 
         private void NarisiParametre()
         {
-            if (Način.SelectedIndex != 0)
+            if (SearchAlgorithm.SelectedIndex != 0)
             {
-                StPomikov.Visibility = System.Windows.Visibility.Hidden;
-                pomikiEnakovrednaStanja.Visibility = System.Windows.Visibility.Hidden;
+                NumOfMoves.Visibility = System.Windows.Visibility.Hidden;
+                movesSameDirection.Visibility = System.Windows.Visibility.Hidden;
             }
             else
             {
-                StPomikov.Visibility = System.Windows.Visibility.Visible;
-                pomikiEnakovrednaStanja.Visibility = System.Windows.Visibility.Visible;
+                NumOfMoves.Visibility = System.Windows.Visibility.Visible;
+                movesSameDirection.Visibility = System.Windows.Visibility.Visible;
             }
-            if (Način.SelectedIndex != 1)
+            if (SearchAlgorithm.SelectedIndex != 1)
             {
                 Temp.Visibility = System.Windows.Visibility.Hidden;
                 TempText.Visibility = System.Windows.Visibility.Hidden;
@@ -177,45 +177,45 @@ namespace Lokalno_Iskalni_Algoritmi
                 TempText.Visibility = System.Windows.Visibility.Visible;
 
             }
-            if (Način.SelectedIndex != 2)
+            if (SearchAlgorithm.SelectedIndex != 2)
             {
-                Stanja.Visibility = System.Windows.Visibility.Hidden;
-                StanjaText.Visibility = System.Windows.Visibility.Hidden;
+                Models.Visibility = System.Windows.Visibility.Hidden;
+                ModelsText.Visibility = System.Windows.Visibility.Hidden;
 
             }
             else
             {
-                Stanja.Visibility = System.Windows.Visibility.Visible;
-                StanjaText.Visibility = System.Windows.Visibility.Visible;
+                Models.Visibility = System.Windows.Visibility.Visible;
+                ModelsText.Visibility = System.Windows.Visibility.Visible;
 
             }
-            if (Način.SelectedIndex != 3)
+            if (SearchAlgorithm.SelectedIndex != 3)
             {
-                Populacija.Visibility = System.Windows.Visibility.Hidden;
-                PopulacijaText.Visibility = System.Windows.Visibility.Hidden;
+                Population.Visibility = System.Windows.Visibility.Hidden;
+                PopulationText.Visibility = System.Windows.Visibility.Hidden;
 
             }
             else
             {
-                Populacija.Visibility = System.Windows.Visibility.Visible;
-                PopulacijaText.Visibility = System.Windows.Visibility.Visible;
+                Population.Visibility = System.Windows.Visibility.Visible;
+                PopulationText.Visibility = System.Windows.Visibility.Visible;
 
             }
         }
-        private void Zgeneriraj(object sender, RoutedEventArgs e)
+        private void Generate(object sender, RoutedEventArgs e)
         {
 
-            InitializeArray(Velikost.SelectedIndex + 4);
-            RandomQuenns(Velikost.SelectedIndex + 4);
+            InitializeArray(Size.SelectedIndex + 4);
+            RandomQuenns(Size.SelectedIndex + 4);
 
 
             ClearBoard();
-            DrawChessboard(Velikost.SelectedIndex + 4);
+            DrawChessboard(Size.SelectedIndex + 4);
 
             List<Point> seznam = GetQueens();
             int tmp = GetHeuristic(seznam);
             Heuristic.Content = tmp;
-            StKorakov.Content = "";
+            NumOfIterations.Content = "";
 
         }
 
@@ -226,7 +226,7 @@ namespace Lokalno_Iskalni_Algoritmi
             {
                 if (!IsSafe((int)seznam[k].X, (int)seznam[k].Y))
                 {
-                    for (int i = 0; i < Velikost.SelectedIndex + 4; i++)
+                    for (int i = 0; i < Size.SelectedIndex + 4; i++)
                     {
                         if (array[(int)seznam[k].X, i] == 1)
                         {
@@ -236,7 +236,7 @@ namespace Lokalno_Iskalni_Algoritmi
                         {
                             if (i != (int)seznam[k].X) count++;
                         }
-                        for (int j = 0; j < Velikost.SelectedIndex + 4; j++)
+                        for (int j = 0; j < Size.SelectedIndex + 4; j++)
                         {
                             int difRow = Math.Abs(i - (int)seznam[k].X);
                             int difCol = Math.Abs(j - (int)seznam[k].Y);
@@ -258,8 +258,8 @@ namespace Lokalno_Iskalni_Algoritmi
         {
             List<Point> vector = new List<Point>();
 
-            for (int i = 0; i < Velikost.SelectedIndex + 4; i++)
-                for (int j = 0; j < Velikost.SelectedIndex + 4; j++)
+            for (int i = 0; i < Size.SelectedIndex + 4; i++)
+                for (int j = 0; j < Size.SelectedIndex + 4; j++)
                 {
                     if (array[i, j] == 1)
                     {
@@ -273,7 +273,7 @@ namespace Lokalno_Iskalni_Algoritmi
 
         private bool IsSafe(int row, int col)
         {
-            for (int i = 0; i < Velikost.SelectedIndex + 4; i++)
+            for (int i = 0; i < Size.SelectedIndex + 4; i++)
             {
                 if (array[row, i] == 1)
                 {
@@ -283,7 +283,7 @@ namespace Lokalno_Iskalni_Algoritmi
                 {
                     if (i != row) return false;
                 }
-                for (int j = 0; j < Velikost.SelectedIndex + 4; j++)
+                for (int j = 0; j < Size.SelectedIndex + 4; j++)
                 {
                     int difRow = Math.Abs(i - row);
                     int difCol = Math.Abs(j - col);
@@ -322,9 +322,9 @@ namespace Lokalno_Iskalni_Algoritmi
                     if (!((int)queens[i].X == i && (int)queens[i].Y == j))
                     {
 
-                        if (Način.SelectedIndex == 0)                   // razvij za Hill Climbing
+                        if (SearchAlgorithm.SelectedIndex == 0)                   // razvij za Hill Climbing
                         {
-                            int pomiki = Int32.Parse(pomikiEnakovrednaStanja.Text);
+                            int pomiki = Int32.Parse(movesSameDirection.Text);
 
                             Point tmp = new Point(i, j);
                             queens[i] = tmp;
@@ -348,7 +348,7 @@ namespace Lokalno_Iskalni_Algoritmi
                             if (counter > pomiki + bestQueens.Count -1)
                                 return bestQueens;
                         }
-                        else if(Način.SelectedIndex == 1)                   // razvij za Simulated Annealing
+                        else if(SearchAlgorithm.SelectedIndex == 1)                   // razvij za Simulated Annealing
                         {
 
                             Point tmp = new Point(i, j);
@@ -403,7 +403,7 @@ namespace Lokalno_Iskalni_Algoritmi
             InitializeQuenns(queens);
             List<Point> rezerva = new List<Point>();
             List<Point> prejsni = Kopiraj(queens);
-            int pomiki = Int32.Parse(pomikiEnakovrednaStanja.Text);
+            int pomiki = Int32.Parse(movesSameDirection.Text);
             while (counter < pomiki)
             {
                 
@@ -431,7 +431,7 @@ namespace Lokalno_Iskalni_Algoritmi
             InitializeQuenns(queens);
             DrawChessboard(queens.Count);
             Heuristic.Content = GetHeuristic(queens);
-            StKorakov.Content = counter.ToString();
+            NumOfIterations.Content = counter.ToString();
         }
 
         private void SimuliranoOhlajanje(List<Point> queens)
@@ -440,8 +440,8 @@ namespace Lokalno_Iskalni_Algoritmi
             InitializeQuenns(queens);
             List<Point> prejsni = Kopiraj(queens);
             List<Point> rezerva = new List<Point>();
-            temp = Int32.Parse(zacetnaTemp.Text);
-            deltaTemp = Int32.Parse(spremembaTemp.Text);
+            temp = Int32.Parse(startTemp.Text);
+            deltaTemp = Int32.Parse(changeTemp.Text);
 
             while (temp > 0)
             {
@@ -474,15 +474,15 @@ namespace Lokalno_Iskalni_Algoritmi
             DrawChessboard(queens.Count);
 
             Heuristic.Content = GetHeuristic(queens);
-            StKorakov.Content = counter.ToString();
+            NumOfIterations.Content = counter.ToString();
         }
 
         private List<Point> LokalniZarek(List<Point> queens)
         {
             counter = 0;
             InitializeQuenns(queens);
-            int maxNumberIterations = Int32.Parse(stIteracij.Text);
-            int states = Int32.Parse(stStanj.Text);
+            int maxNumberIterations = Int32.Parse(maxNumOfIterations.Text);
+            int states = Int32.Parse(numOfModels.Text);
             List<int> heuristics = new List<int>();
             List<List<Point>> statesList = new List<List<Point>>();
             Random rand = new Random();
@@ -599,19 +599,19 @@ namespace Lokalno_Iskalni_Algoritmi
         private List<Point> GenetskiAlgoritem(List<Point> queens)
         {
             counter = 0;
-            int populacija = Int32.Parse(velikostPop.Text);
-            populacija = populacija - (populacija % 2);
+            int population = Int32.Parse(sizePop.Text);
+            population = population - (population % 2);
 
-            float elitizem = (float)(Int32.Parse(odstotekElite.Text) *populacija / 100);
-            float krizanje = float.Parse(verjetnostKrizanja.Text);
-            float mutacija = float.Parse(verjetnostMutacije.Text);
-            int generacije = Int32.Parse(stGeneracij.Text);
+            float elitizem = (float)(Int32.Parse(elitePercent.Text) * population / 100);
+            float krizanje = float.Parse(crossProba.Text);
+            float mutacija = float.Parse(mutaProba.Text);
+            int generacije = Int32.Parse(numOfGenerations.Text);
 
          
             List<List<Point>> queensList = new List<List<Point>>();
             List<List<Point>> tmpQueensList = new List<List<Point>>();
             List<int> heuristics = new List<int>();
-            for (int i = 0; i < populacija; i++)
+            for (int i = 0; i < population; i++)
             {
                 RandomQuenns(queens.Count);
                 queensList.Add(GetQueens());
@@ -621,7 +621,7 @@ namespace Lokalno_Iskalni_Algoritmi
             {
 
 
-                for (int j = 0; j < populacija; j++)        //Heuristika vseh možnosti
+                for (int j = 0; j < population; j++)        //Heuristika vseh možnosti
                 {
                     int h;
                     InitializeQuenns(queensList[j]);
@@ -645,12 +645,12 @@ namespace Lokalno_Iskalni_Algoritmi
                 queensList = Mutiraj(queensList, mutacija);
 
                 queensList.InsertRange(0, tmpQueensList);
-                queensList.RemoveRange(populacija, queensList.Count - populacija);
+                queensList.RemoveRange(population, queensList.Count - population);
 
                 heuristics.Clear();
                 counter++;
             }
-            for (int j = 0; j < populacija; j++)        //Heuristika vseh možnosti
+            for (int j = 0; j < population; j++)        //Heuristika vseh možnosti
             {
                 int h;
                 InitializeQuenns(queensList[j]);
@@ -713,24 +713,24 @@ namespace Lokalno_Iskalni_Algoritmi
 
         private void StartAlgorithm(object sender, RoutedEventArgs e)
         {
-            if (Način.SelectedIndex == 0)
+            if (SearchAlgorithm.SelectedIndex == 0)
             {
-                if (Heuristic.Content == null || Heuristic.Content.ToString() == "0" || pomikiEnakovrednaStanja.Text == "")
-                    MessageBox.Show("Za algoritem nimate potrebnih parametrov.");
+                if (Heuristic.Content == null || Heuristic.Content.ToString() == "0" || movesSameDirection.Text == "")
+                    MessageBox.Show("You dont have all parameters for algorithm.");
                 else
                     VzpenjanjeNaHrib(GetQueens());
             }
-            else if(Način.SelectedIndex == 1)
+            else if(SearchAlgorithm.SelectedIndex == 1)
             {
-                if (Heuristic.Content == null || Heuristic.Content.ToString() == "0" || zacetnaTemp.Text == "" || spremembaTemp.Text == "")
-                    MessageBox.Show("Za algoritem nimate potrebnih parametrov.");
+                if (Heuristic.Content == null || Heuristic.Content.ToString() == "0" || startTemp.Text == "" || changeTemp.Text == "")
+                    MessageBox.Show("You dont have all parameters for algorithm.");
                 else
                     SimuliranoOhlajanje(GetQueens());
             }
-            else if (Način.SelectedIndex == 2)
+            else if (SearchAlgorithm.SelectedIndex == 2)
             {
-                if (Heuristic.Content == null || Heuristic.Content.ToString() == "0" || stStanj.Text == "" || stIteracij.Text == "")
-                    MessageBox.Show("Za algoritem nimate potrebnih parametrov.");
+                if (Heuristic.Content == null || Heuristic.Content.ToString() == "0" || numOfModels.Text == "" || maxNumOfIterations.Text == "")
+                    MessageBox.Show("You dont have all parameters for algorithm.");
                 else
                 {
                     List<Point> queens = new List<Point>();
@@ -738,15 +738,15 @@ namespace Lokalno_Iskalni_Algoritmi
                     InitializeQuenns(queens);
                     ClearBoard();
                     DrawChessboard(queens.Count);
-                    StKorakov.Content = counter.ToString();
+                    NumOfIterations.Content = counter.ToString();
                     Heuristic.Content = GetHeuristic(queens);
                     
                 }
             }
-            else if (Način.SelectedIndex == 3)
+            else if (SearchAlgorithm.SelectedIndex == 3)
             {
-                if (Heuristic.Content == null || Heuristic.Content.ToString() == "0" || velikostPop.Text == "" || odstotekElite.Text == "" || verjetnostKrizanja.Text == "" || verjetnostMutacije.Text == "" || stGeneracij.Text == "")
-                    MessageBox.Show("Za algoritem nimate potrebnih parametrov.");
+                if (Heuristic.Content == null || Heuristic.Content.ToString() == "0" || sizePop.Text == "" || elitePercent.Text == "" || crossProba.Text == "" || mutaProba.Text == "" || numOfGenerations.Text == "")
+                    MessageBox.Show("You dont have all parameters for algorithm.");
                 else
                 {
                     
@@ -755,7 +755,7 @@ namespace Lokalno_Iskalni_Algoritmi
                     InitializeQuenns(queens);
                     ClearBoard();
                     DrawChessboard(queens.Count);
-                    StKorakov.Content = counter.ToString();
+                    NumOfIterations.Content = counter.ToString();
                     Heuristic.Content = GetHeuristic(queens);
                 }
             }
