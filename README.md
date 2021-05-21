@@ -5,5 +5,7 @@ You can choose from 4 different algorithms:
   - Simulated annealing
   - Local beam search
   - Genetic algorithm
-![alt text](https://github.com/blebla25/n-quenns-problem/blob/main/Screenshot_1.png)
+
+
+![test](https://github.com/blebla25/n-quenns-problem/blob/main/Screenshot_1.png)
 
