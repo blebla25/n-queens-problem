@@ -1,4 +1,4 @@
-# N quenns problem
+# N queens problem
 GUI application made with WPF for N quenns problem using local search algorithms.
 You can choose from 4 different algorithms:
   - Hill Climbing
